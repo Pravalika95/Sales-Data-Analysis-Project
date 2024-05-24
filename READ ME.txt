@@ -1,0 +1,53 @@
+
+Agenda
+
+Data Analysis
+Identifying key metrics
+New schema
+Data Ingestion
+SQL
+Plots or dashboards
+
+==========================================================
+
+Data analysis
+
+-> Per document, Have gone through all the 3 datasets provided
+-> Tried to see the relation between each dataset
+-> Analyzed key components from these 3 datasets to come up with impact full insights from available data
+-> Analyzed data transformations need to be done from available data
+
+==========================================================
+
+Key metrics
+
+- ACV Bookings: Measure of actualized annual contract value (closed won deals).
+- Win Rate: Ratio of closed won opportunities to total opportunities.
+- Pipeline Generated: Total value of opportunities created.
+- Quota Attainment by Sales Rep: ACV Bookings in a quarter divided by the assigned quota for the quarter.
+
+===========================================================
+
+New schema
+
+- Create tables for Opportunity, Quota, and Fiscal_Calendar.
+- Normalize data to avoid redundancy and ensure extensibility.
+- Utilize views for aggregated metrics to enhance performance.
+- Consider incremental updates for efficient data processing.
+
+==========================================================
+
+Data ingestion
+
+- Use Python to ingest CSV data into the database.
+- Utilize libraries like pandas to manipulate data efficiently.
+
+==========================================================
+
+SQL Queries & PLOTS
+
+- Write SQL queries to generate desired outputs from source tables.
+- Include joins, aggregations, and filters as necessary.
+- Adding plots using python
+- Creating dashboards using visualization tools
+

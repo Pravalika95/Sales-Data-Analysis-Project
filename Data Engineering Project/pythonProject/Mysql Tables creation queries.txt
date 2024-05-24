@@ -1,0 +1,62 @@
+
+STEP 1 : Opportunities Table
+
+CREATE TABLE Opportunities (
+    Opportunity_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Opportunity_Type VARCHAR(255),
+    Opportunity_Owner_ID INT,
+    Opportunity_Created_Date DATE,
+    Opportunity_Close_Date DATE,
+    Stage VARCHAR(50),
+    Probability FLOAT,
+    ACV_Bookings DECIMAL(15, 2), -- Assuming this is a monetary value
+    Industry VARCHAR(255),
+    Sub_Region VARCHAR(255),
+    Region VARCHAR(255),
+    Segment VARCHAR(255)
+);
+
+==============================
+
+STEP 2 : Quota Table
+
+
+CREATE TABLE Quota (
+    Quota_Period_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Quota_Period_Start_Date DATE,
+    Quota_Period_End_Date DATE,
+    Quota_Period VARCHAR(255), -- Assuming this contains period names like "Q1", "Q2", etc.
+    Quota_Region VARCHAR(255),
+    Quota_Sub_Region VARCHAR(255),
+    Quota_Segment VARCHAR(255),
+    Quota_Owner_ID INT,
+    Quota_Owner_Name VARCHAR(255),
+    Quota_Period_Timeframe VARCHAR(50), -- Assuming this contains values like "Quarter", "Semi-Annual", etc.
+    q1_quota DECIMAL(15, 2),
+    q2_quota DECIMAL(15, 2),
+    q3_quota DECIMAL(15, 2),
+    q4_quota DECIMAL(15, 2)
+);
+
+=============================
+STEP 3 :Fiscal_Calendar Table
+
+CREATE TABLE Fiscal_Calendar (
+    Date DATE PRIMARY KEY,
+    Fiscal_Year INT,
+    Fiscal_Quarter INT
+);
+
+=========================
+STEP 3 :Fiscal_Calendar Table , when I am trying to insert tables with data i encounted issues with multiple rows can not insert in DB.
+
+INSERT INTO Fiscal_Calendar (Date, Fiscal_Year, Fiscal_Quarter) VALUES
+('1/29/2023', 'FY24', 'FY24 Q1'),
+('1/30/2023', 'FY24', 'FY24 Q1'),
+('1/31/2023', 'FY24', 'FY24 Q1');
+
+
+1/29/2023	FY24	FY24 Q1
+1/30/2023	FY24	FY24 Q1
+1/31/2023	FY24	FY24 Q1
+2/1/2023	FY24	FY24 Q1
